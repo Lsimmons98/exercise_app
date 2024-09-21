@@ -65,6 +65,7 @@ const retrieveAllExercises = () => {
     .then((resp) => resp.json())
     .then((resp) => {
       resp.forEach((exercise) => {
+        // debugger
         exerciseToDom(exercise)
       })
     })
@@ -238,25 +239,25 @@ const createMuscleSubGroups = () => {
   })
 }
 
-const listenerForToggleAllExercises = () => {
-  toggleAllExercisesButton.addEventListener("click", (event) => {
-    event.preventDefault()
-    if (toggleAllExercisesButton.textContent === "Show All Exercises") {
-      toggleAllExercisesButton.textContent = "Hide Exercises List"
-      allExercisesDiv.classList.remove("hidden")
-    } else if (toggleAllExercisesButton.textContent === "Hide Exercises List") {
-      toggleAllExercisesButton.textContent = "Show All Exercises"
-      allExercisesDiv.classList.add("hidden")
-    }
-  })
-}
+// const listenerForToggleAllExercises = () => {
+//   toggleAllExercisesButton.addEventListener("click", (event) => {
+//     event.preventDefault()
+//     if (toggleAllExercisesButton.textContent === "Show All Exercises") {
+//       toggleAllExercisesButton.textContent = "Hide Exercises List"
+//       allExercisesDiv.classList.remove("hidden")
+//     } else if (toggleAllExercisesButton.textContent === "Hide Exercises List") {
+//       toggleAllExercisesButton.textContent = "Show All Exercises"
+//       allExercisesDiv.classList.add("hidden")
+//     }
+//   })
+// }
 
 retrieveAllExercises()
 createMuscleSubGroups()
 applySubGroups()
 setupRandomExercises()
 newExerciseSubmitListener()
-listenerForToggleAllExercises()
+// listenerForToggleAllExercises()
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchMuscleGroup = document.getElementById("exercise-form")

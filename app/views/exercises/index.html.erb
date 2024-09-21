@@ -33,11 +33,15 @@
     </div>
   </div>
 
-  <div class='hidden' id="all-exercises">
+  <div data-controller="exercises">
+  <div id='all-exercises' class="hidden" data-exercises-target="allExercises">
     <h2>All Exercises</h2>
     <div id="main-exercise-list"></div>
   </div>
-  <button id="toggle-all-exercises">Show All Exercises</button>
+  <button id="toggle-all-exercises" data-action="exercises#toggle" data-exercises-target="toggleButton">
+    Show All Exercises
+  </button>
+</div>
   <div class="container">
     <h2>Add a New Exercise</h2>
     <form id="add-exercise-form">

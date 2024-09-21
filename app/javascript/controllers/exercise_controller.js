@@ -1,21 +1,19 @@
-// import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus"
 
-// export default class extends Controller {
-//   connect() {
-//     console.log("Exercise controller connected")
+export default class extends Controller {
+  static targets = ["toggleButton", "allExercises"]
 
-//     fetch("/exercises.json")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data)
-//         this.updateExerciseList(data)
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching data:", error)
-//       })
-//   }
+  toggle() {
+    console.log("toggled!")
+  }
+}
 
-//   updateExerciseList(exercises) {
-//     // Logic for updating the DOM with fetched exercises
+// toggle() {
+//   if (this.toggleButtonTarget.textContent === "Show All Exercises") {
+//     this.toggleButtonTarget.textContent = "Hide Exercises List"
+//     this.allExercisesTarget.classList.remove("hidden")
+//   } else if (this.toggleButtonTarget.textContent === "Hide Exercises List") {
+//     this.toggleButtonTarget.textContent = "Show All Exercises"
+//     this.allExercisesTarget.classList.add("hidden")
 //   }
 // }
