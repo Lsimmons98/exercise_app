@@ -1,39 +1,32 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workout Planner</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>What Are We Hitting Today?</h1>
-    <form id="exercise-form">
-      <label for="exercise">Select a Muscle Group:</label>
-      <select name="exercise" id="exercise">
-        <option value="" disabled selected>Select an option</option>
-        <option value ='Chest'>Chest</option>
-        <option value='Back'>Back</option>
-        <option value='Shoulders'>Shoulders</option>
-        <option value='Legs'>Legs</option>
-        <option value='Triceps'>Triceps</option>
-        <option value='Biceps'>Biceps</option>
-        <option value='Abs'>Abs</option>
-      </select>
-    </form>
+<div class="container">
+  <h1>What Are We Hitting Today?</h1>
+  <form id="exercise-form">
+    <label for="exercise">Select a Muscle Group:</label>
+    <select name="exercise" id="exercise">
+      <option value="" disabled selected>Select an option</option>
+      <option value ='Chest'>Chest</option>
+      <option value='Back'>Back</option>
+      <option value='Shoulders'>Shoulders</option>
+      <option value='Legs'>Legs</option>
+      <option value='Triceps'>Triceps</option>
+      <option value='Biceps'>Biceps</option>
+      <option value='Abs'>Abs</option>
+    </select>
+  </form>
+</div>
+<div id='flex' class="flex-container">
+  <div class='hidden' id="searched-exercises">
+    <h2 id="muscle-group-title"></h2>
+    <ul id="search-exercise-list"></ul>
+    <h2 id="random-workout-title"></h2>
+    <ul id="random-workout-list"></ul>
   </div>
-  <div id='flex' class="flex-container">
-    <div class='hidden' id="searched-exercises">
-      <h2 id="muscle-group-title"></h2>
-      <ul id="search-exercise-list"></ul>
-      <h2 id="random-workout-title"></h2>
-      <ul id="random-workout-list"></ul>
-    </div>
-    <div class='hidden' id="exercise-details">
-      <div id="info"></div>
-    </div>
+  <div class='hidden' id="exercise-details">
+    <div id="info"></div>
   </div>
+</div>
 
-  <div data-controller="exercises">
+<div data-controller="exercises">
   <div id='all-exercises' class="hidden" data-exercises-target="allExercises">
     <h2>All Exercises</h2>
     <div id="main-exercise-list"></div>
@@ -42,43 +35,41 @@
     Show All Exercises
   </button>
 </div>
-  <div class="container">
-    <h2>Add a New Exercise</h2>
-    <form id="add-exercise-form">
-      <label for="new-exercise-name">Exercise Name:</label>
-      <input type="text" id="new-exercise-name" name="new-exercise-name" required>
+<div class="container">
+  <h2>Add a New Exercise</h2>
+  <form id="add-exercise-form">
+    <label for="new-exercise-name">Exercise Name:</label>
+    <input type="text" id="new-exercise-name" name="new-exercise-name" required>
 
-      <label for="new-muscle-group">Muscle Group:</label>
-      <select id="new-muscle-group" name="new-muscle-group" required>
-        <option value="" disabled selected>Select a muscle group</option>
-        <option value='Chest'>Chest</option>
-        <option value='Back'>Back</option>
-        <option value='Legs'>Legs</option>
-        <option value='Abs'>Abs</option>
-        <option value='Biceps'>Biceps</option>
-        <option value='Triceps'>Triceps</option>
-        <option value='Shoulders'>Shoulders</option>
-      </select>
+    <label for="new-muscle-group">Muscle Group:</label>
+    <select id="new-muscle-group" name="new-muscle-group" required>
+      <option value="" disabled selected>Select a muscle group</option>
+      <option value='Chest'>Chest</option>
+      <option value='Back'>Back</option>
+      <option value='Legs'>Legs</option>
+      <option value='Abs'>Abs</option>
+      <option value='Biceps'>Biceps</option>
+      <option value='Triceps'>Triceps</option>
+      <option value='Shoulders'>Shoulders</option>
+    </select>
 
-      <label for="new-sub-group">Sub Group:</label>
-      <select id="new-sub-group" name="new-sub-group" required>
-        <option value="" disabled selected>Select a sub group</option>
-      </select>
+    <label for="new-sub-group">Sub Group:</label>
+    <select id="new-sub-group" name="new-sub-group" required>
+      <option value="" disabled selected>Select a sub group</option>
+    </select>
 
-      <label for="new-category">Category:</label>
-      <select id="new-category" name="new-category" required>
-        <option value="isolation">Isolation</option>
-        <option value="compound">Compound</option>
-      </select>
+    <label for="new-category">Category:</label>
+    <select id="new-category" name="new-category" required>
+      <option value="isolation">Isolation</option>
+      <option value="compound">Compound</option>
+    </select>
 
-      <label for="new-instructions">Instructions:</label>
-      <textarea id="new-instructions" name="new-instructions" rows="4" required></textarea>
+    <label for="new-instructions">Instructions:</label>
+    <textarea id="new-instructions" name="new-instructions" rows="4" required></textarea>
 
-      <label for="new-image-url">Image URL:</label>
-      <input type="text" id="new-image-url" name="new-image-url">
+    <label for="new-image-url">Image URL:</label>
+    <input type="text" id="new-image-url" name="new-image-url">
 
-      <button type="submit">Add Exercise</button>
-    </form>
-  </div>
-  <script src="main.js"></script>
-</body>
+    <button type="submit">Add Exercise</button>
+  </form>
+</div>
